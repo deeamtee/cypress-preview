@@ -1,0 +1,11 @@
+node_modules
+coverage
+dist/
+.idea
+.vscode/*
+!.vscode/settings.json
+*.log
+*test-report.xml
+.DS_Store
+.npmrc
+.yarnrc

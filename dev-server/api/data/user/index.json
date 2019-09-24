@@ -1,0 +1,13 @@
+{
+    "user": {
+        "id": "01ae849a-08a4-401a-af3d-fc43c5a630b8",
+        "firstName": "Ильюша",
+        "lastName": "Фамилия",
+        "middleName": "Отчество",
+        "phone": "+79032833042",
+        "birthDate": "1969-01-29",
+        "email": "qwe@qwe.qwe",
+        "role": "admin"
+    },
+    "hasFeedback": false
+}

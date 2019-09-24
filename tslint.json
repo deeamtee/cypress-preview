@@ -1,0 +1,46 @@
+{
+    "defaultSeverity": "error",
+    "extends": ["tslint:recommended", "tslint-react"],
+    "linterOptions": {
+        "exclude": [
+            "**/node_modules/**",
+            "dev-server/**"
+        ]
+    },
+    "rules": {
+        "eofline": false,
+        "quotemark": [true, "single"],
+        "interface-name": [true, "never-prefix"],
+        "object-literal-sort-keys": false,
+        "ordered-imports": false,
+        "semicolon": false,
+        "max-line-length": false,
+        "object-literal-key-quotes": [true, "as-needed"],
+        "member-access": false,
+        "trailing-comma": false,
+        "member-ordering": [
+            true,
+            {
+                "order": [
+                    "public-static-field",
+                    "public-static-method",
+                    "protected-static-field",
+                    "protected-static-method",
+                    "private-static-field",
+                    "private-static-method",
+                    "public-instance-field",
+                    "protected-instance-field",
+                    "private-instance-field",
+                    "public-constructor",
+                    "protected-constructor",
+                    "private-constructor",
+                    "public-instance-method",
+                    "protected-instance-method",
+                    "private-instance-method"
+                ]
+            }
+        ],
+        "jsx-boolean-value": [true, "never"],
+        "no-shadowed-variable": false
+    }
+}

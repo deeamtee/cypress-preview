@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <title>Cypress presentation</title>
+        <link rel="icon" type="image/png" href="/favicon.ico">
+        <% for (var css in htmlWebpackPlugin.files.css) { %>
+            <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+        <% } %>
+    </head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+    </style>
+    <body>
+        <div id="root"></div>
+
+        <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+            <% /*
+                If polyfill chunk for IE, than add it in a special way:
+                - add simple script for checking browser by userAgent
+                - if it's IE browser, than add polyfill chunk script to body
+
+                We don't want to add this chunk every time:
+                - it's pretty big
+                - there is issue in Chrome https://github.com/moment/luxon/issues/190
+            */ %>
+            <% if ((htmlWebpackPlugin.files.chunks[chunk].entry).indexOf('/ie') !== -1) {%>
+                <script>
+                    if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.userAgent.indexOf('Trident/') !== -1) {
+                        var script = document.createElement('script');
+                        script.setAttribute('src', '<%= htmlWebpackPlugin.files.chunks[chunk].entry %>');
+                        document.body.appendChild(script);
+                    }
+                </script>
+            <% } else { %>
+                <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+            <% } %>
+        <% } %>
+    </body>
+</html>

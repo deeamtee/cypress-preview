@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "module":"commonjs",
+    "lib": [
+      "es6",
+      "es2017",
+      "dom"
+    ],
+    "jsx": "react",
+    "outDir": "./dist",
+    "types": ["cypress"],
+    "strict": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+    "downlevelIteration": true
+  },
+  "typeRoots" : [
+    "./typings"
+  ],
+  "include": [
+    "./src/**/*",
+    "./typings",
+    "./dist/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.tsx"
+  ]
+}
